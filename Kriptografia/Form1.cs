@@ -23,6 +23,7 @@ namespace Kriptografia
             System.Diagnostics.Process Proc = new System.Diagnostics.Process();
             Proc.StartInfo.FileName = "алфавит.txt";
             Proc.Start();
+			//some changes
         }
 
         private void ShifButton_Click(object sender, EventArgs e)
