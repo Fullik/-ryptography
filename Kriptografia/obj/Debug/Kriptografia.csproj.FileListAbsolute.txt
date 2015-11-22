@@ -1,0 +1,9 @@
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\bin\Debug\Kriptografia.exe.config
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\bin\Debug\Kriptografia.exe
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\bin\Debug\Kriptografia.pdb
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.csprojResolveAssemblyReference.cache
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.Form1.resources
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.Properties.Resources.resources
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.csproj.GenerateResource.Cache
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.exe
+c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.pdb
