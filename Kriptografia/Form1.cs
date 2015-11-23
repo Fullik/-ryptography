@@ -13,6 +13,9 @@ namespace Kriptografia
 {
     public partial class Form1 : Form
     {
+        private string OTBrute = "";
+        private string ZTBrute = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -27,135 +30,185 @@ namespace Kriptografia
 
         private void ShifButton_Click(object sender, EventArgs e)
         {
-            if (DecryptRadioButton.Checked)
-            {
-                string OT = "";
-                OT = CezarTextBox.Text;
-                try
+            
+                char[] ss = { '\n', ' ' };
+                string text = File.ReadAllText("алфавит.txt");
+                string[] alphabet = text.Split(ss);
+                char[] alphabetChar = new char[alphabet.Length];
+
+                for (int i = 0; i < alphabet.Length; i++)
                 {
-                    int Key = Convert.ToInt32(KeyTextBox.Text);
-                    if (Key <= 0)
+                    alphabetChar[i] = alphabet[i][0];
+                }
+                if (DecryptRadioButton.Checked)
+                {
+                    try
                     {
-                        Console.Text += "Error: Ключ должен быть положительным\n";
-                    }
-                    else
-                    {
+                        string OT = "";
+                        OT = CezarTextBox.Text;
                         if (OT != "")
                         {
-                            char[] ss = { '\n', ' ' };
-                            string text = File.ReadAllText("алфавит.txt");
-                            string[] alphabet = text.Split(ss);
-                            char[] alphabetChar = new char[alphabet.Length];
-
-
-                            for (int i = 0; i < alphabet.Length; i++)
-                            {
-                                alphabetChar[i] = alphabet[i][0];
-                            }
-
                             char[] OTChar = OT.ToCharArray();
                             char[] result = new char[OTChar.Length];
-
-                            Console.Text += "Текст: " + OT + "\n";
-                            Console.Text += "Ключ: " + Key + "\n";
-                            CezarTextBox.Text = "";
-                            KeyTextBox.Text = "";
-
-                            for (int i = 0; i < OTChar.Length; i++)
+                            int Key = Convert.ToInt32(KeyTextBox.Text);
+                            if (Key <= 0)
                             {
-                                int j = Array.IndexOf(alphabetChar, OTChar[i]);
-                                if (j > 0)
-                                {
-                                    j = (j + Key) % alphabetChar.Length;
-                                    result[i] = alphabetChar[j];
-                                }
-                                else
-                                {
-                                    Console.Text += "Error: Такого символа нет в алфавите " + OTChar[i] + "\n";
-                                    return;
-                                }
-                                OTChar[i] = ' ';
+                                Console.Text += "Error: Ключ должен быть положительным\n";
                             }
-                            string resultString = new string(result);
-                            Console.Text += "Зашифрованное сообщение: " + resultString + "\n";
-                            Console.Text += "-------------------------------Конец шифровки-------------------------------\n";
+                            else
+                            {
+                                Console.Text += "Текст: " + OT + "\n";
+                                Console.Text += "Ключ: " + Key + "\n";
+                                CezarTextBox.Text = "";
+                                KeyTextBox.Text = "";
+
+                                for (int i = 0; i < OTChar.Length; i++)
+                                {
+                                    int j = Array.IndexOf(alphabetChar, OTChar[i]);
+                                    if (j >= 0)
+                                    {
+                                        j = (j + Key) % alphabetChar.Length;
+                                        result[i] = alphabetChar[j];
+                                    }
+                                    else
+                                    {
+                                        Console.Text += "Error: Такого символа нет в алфавите " + OTChar[i] + "\n";
+                                        return;
+                                    }
+                                    OTChar[i] = ' ';
+                                }
+                                string resultString = new string(result);
+                                Console.Text += "Зашифрованное сообщение: " + resultString + "\n";
+                                Console.Text += "-------------------------------Конец шифровки-------------------------------\n";
+                            }
                         }
                         else
                         {
-                            Console.Text += "Error: Введите текст для расшифровки\n";
+                            Console.Text += "Введите сообщение\n";
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.Text += "Error: Ключ должен быть целым числом\n";
-                }
-            }
-            else
-            {
-                string OT = "";
-                OT = OTDecryTextBox.Text;
-                try
-                {
-                    int Key = Convert.ToInt32(KeyDecryTextBox.Text);
-                    if (Key <= 0)
+
+                    catch (Exception ex)
                     {
-                        Console.Text += "Error: Ключ должен быть положительным\n";
+                        Console.Text += "Error: Ключ должен быть целым числом\n";
                     }
-                    else
+
+                }
+
+                if (CryptRadioButton.Checked)
+                {
+                    try
                     {
+                        string OT = "";
+                        OT = OTDecryTextBox.Text;
+
                         if (OT != "")
                         {
-                            char[] ss = { '\n', ' ' };
-                            string text = File.ReadAllText("алфавит.txt");
-                            string[] alphabet = text.Split(ss);
-                            char[] alphabetChar = new char[alphabet.Length];
-
-
-                            for (int i = 0; i < alphabet.Length; i++)
-                            {
-                                alphabetChar[i] = alphabet[i][0];
-                            }
-
                             char[] OTChar = OT.ToCharArray();
                             char[] result = new char[OTChar.Length];
-
-                            Console.Text += "Текст: " + OT + "\n";
-                            Console.Text += "Ключ: " + Key + "\n";
-                            CezarTextBox.Text = "";
-                            KeyTextBox.Text = "";
-
-                            for (int i = 0; i < OTChar.Length; i++)
+                            int Key = Convert.ToInt32(KeyDecryTextBox.Text);
+                            if (Key <= 0)
                             {
-                                int j = Array.IndexOf(alphabetChar, OTChar[i]);
-                                if (j > 0)
-                                {
-                                    j = (j - Key) % alphabetChar.Length;
-                                    result[i] = alphabetChar[j];
-                                }
-                                else
-                                {
-                                    Console.Text += "Error: Такого символа нет в алфавите " + OTChar[i] + "\n";
-                                    return;
-                                }
-                                OTChar[i] = ' ';
+                                Console.Text += "Error: Ключ должен быть положительным\n";
                             }
-                            string resultString = new string(result);
-                            Console.Text += "Зашифрованное сообщение: " + resultString + "\n";
-                            Console.Text += "-------------------------------Конец Расшифровки-------------------------------\n";
+                            else
+                            {
+                                Console.Text += "Текст: " + OT + "\n";
+                                Console.Text += "Ключ: " + Key + "\n";
+                                CezarTextBox.Text = "";
+                                KeyTextBox.Text = "";
+
+                                for (int i = 0; i < OTChar.Length; i++)
+                                {
+                                    int j = Array.IndexOf(alphabetChar, OTChar[i]);
+                                    if (j >= 0)
+                                    {
+                                        j = (j - Key) % alphabetChar.Length;
+                                        if (j < 0)
+                                        {
+                                            j += alphabetChar.Length;
+                                        }
+                                        result[i] = alphabetChar[j];
+                                    }
+                                    else
+                                    {
+                                        Console.Text += "Error: Такого символа нет в алфавите " + OTChar[i] + "\n";
+                                        return;
+                                    }
+                                    OTChar[i] = ' ';
+                                }
+                                string resultString = new string(result);
+                                Console.Text += "Зашифрованное сообщение: " + resultString + "\n";
+                                Console.Text += "-------------------------------Конец Расшифровки-------------------------------\n";
+                            }
                         }
                         else
                         {
-                            Console.Text += "Error: Введите текст для расшифровки\n";
+                            Console.Text += "Error: Введите текст сообщения";
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        Console.Text += "Error: Ключ должен быть целым числом\n";
+                    }
+
                 }
-                catch (Exception ex)
+
+                if (BruteForceRadioButton.Checked)
                 {
-                    Console.Text += "Error: Ключ должен быть целым числом\n";
+                    OTBrute = textBox1.Text;
+                    ZTBrute = textBox2.Text;
+                    if (OTBrute != "")
+                    {
+                        if (ZTBrute != "")
+                        {
+                            char[] OTChar = OTBrute.ToCharArray();
+                            char[] ZTChar = ZTBrute.ToCharArray();
+                            char[] result = new char[OTChar.Length];
+                            string res = null;
+                            for (int h = 0; h < alphabetChar.Length && OTBrute != res ; h++)
+                            {
+                                Console.Text += "Итерация: " + h;
+                                for (int i = 0; i < ZTBrute.Length; i++)
+                                {
+                                    int j = Array.IndexOf(alphabetChar, ZTChar[i]);
+                                    if (j >= 0)
+                                    {
+                                        j = (j - h) % alphabetChar.Length;
+                                        if (j < 0)
+                                        {
+                                            j += alphabetChar.Length;
+                                        }
+                                        result[i] = alphabetChar[j];
+                                    }
+                                    else
+                                    {
+                                        Console.Text += "Error: Такого символа нет в алфавите " + OTChar[i] + "\n";
+                                        return;
+                                    }
+                                }
+                                res = new string(result);
+                                Console.Text += " Текст: " + res + "\n"; 
+                            }
+
+                            Console.Text += "Открытый текст: " + OTBrute + "\n";
+                            Console.Text += "Зашифрованное сообщение: " + ZTBrute + "\n";
+                            Console.Text += "Результат взлома: " + res + "\n\n";
+                            Console.Text += "-------------------------------Конец Взлома-------------------------------\n";
+                        }
+                        else
+                        {
+                            Console.Text += "Введите зашифрованный текст";
+                        }
+                    }
+                    else
+                    {
+                        Console.Text += "Введите открытый текст\n";
+                    }
                 }
+
             }
-        }
+
 
         private void Console_TextChanged(object sender, EventArgs e)
         {
@@ -171,6 +224,8 @@ namespace Kriptografia
             }
             else
             {
+                KeyDecryTextBox.Text = "";
+                OTDecryTextBox.Text = "";
                 groupBox1.Enabled = false;
             }
         }
@@ -183,8 +238,23 @@ namespace Kriptografia
             }
             else
             {
+                CezarTextBox.Text = "";
+                KeyTextBox.Text = "";
                 groupBox2.Enabled = false;
             }
         }
+
+        private void BruteForceRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if(BruteForceRadioButton.Checked)
+            {
+                groupBox3.Enabled = true;
+            }
+            else
+            {
+                groupBox3.Enabled = false;
+            }
+        }
+
     }
 }
