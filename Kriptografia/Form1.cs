@@ -279,7 +279,7 @@ namespace Kriptografia
 
             try
             {
-                Xa = Convert.ToInt64(PtextBox.Text);
+                Xa = Convert.ToInt32(XaTextBox.Text);
             }
             catch (Exception ex)
             {
@@ -289,7 +289,7 @@ namespace Kriptografia
 
             try
             {
-                Xb = Convert.ToInt64(PtextBox.Text);
+                Xb = Convert.ToInt64(XbTextBox.Text);
             }
             catch (Exception ex)
             {
