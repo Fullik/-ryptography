@@ -263,6 +263,8 @@ namespace Kriptografia
             long Xb = 0;
             bool OK = true;
 
+            Console.Text += "-------------Алгоритм Диффи-Хелмана-------------\n";
+
             try
             {
                 p = Convert.ToInt64(PtextBox.Text);
@@ -300,7 +302,67 @@ namespace Kriptografia
             if (OK)
             {
                 Diffi d = new Diffi(p, Xa, Xb);
-                Console.Text += d.Perform();
+                Console.Text += d.Perform() + "-------------Конец алгоритма-------------\n";
+            }
+        }
+
+        private void ShamButton_Click(object sender, EventArgs e)
+        {
+            long m = 0;
+            int n = 0;
+            bool f = true;
+            Console.Text += "-------------Шифр Шамира-------------\n";
+            try
+            {
+                m = Convert.ToInt64(MShamTextBox.Text);
+                n = Convert.ToInt32(NShamTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                Console.Text += "Введено неверное значение \n";
+                f = !f;
+            }
+
+            if (f)
+            {
+                Shamir s = new Shamir(m, n);
+                Console.Text += s.perform() + "-------------Конец передачи-------------\n";
+            }
+        }
+
+        private void ElButton_Click(object sender, EventArgs e)
+        {
+            long m = 0;
+            long p = 0;
+            long g = 0;
+            long cb = 0;
+            long k = 0;
+            bool f = true;
+            Console.Text += "-------------Шифр Эль-Гамаля-------------\n";
+            try
+            {
+                m = Convert.ToInt64(MElTextBox.Text);
+                p = Convert.ToInt64(PElTextBox.Text);
+                if (!Diffi.isSimple(p))
+                {
+                    Console.Text += "P должно быть простым \n";
+                    f = !f;
+                }
+                g = Convert.ToInt64(GElTextBox.Text);
+                cb = Convert.ToInt64(CbElTextBox.Text);
+                k = Convert.ToInt64(KElTextBox.Text);
+                
+            }
+            catch (Exception ex)
+            {
+                Console.Text += "Введено неверное значение \n";
+                f = !f;
+            }
+
+            if (f)
+            {
+                ElGamal el = new ElGamal(p, m, g, cb, k);
+                Console.Text += el.Perform() + "-------------Конец шифра-------------\n";
             }
         }
 
