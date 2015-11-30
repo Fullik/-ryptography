@@ -256,5 +256,53 @@ namespace Kriptografia
             }
         }
 
+        private void DiffiButton_Click(object sender, EventArgs e)
+        {
+            long p = 0;
+            long Xa = 0;
+            long Xb = 0;
+            bool OK = true;
+
+            try
+            {
+                p = Convert.ToInt64(PtextBox.Text);
+                if (!Diffi.isSimple(p))
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Text += "P должно быть простым числом \n";
+                OK = !OK;
+            }
+
+            try
+            {
+                Xa = Convert.ToInt64(PtextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                Console.Text += "Xa должно быть целым числом \n";
+                OK = !OK;
+            }
+
+            try
+            {
+                Xb = Convert.ToInt64(PtextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                Console.Text += "Xb должно быть целым числом \n";
+                OK = !OK;
+            }
+
+            if (OK)
+            {
+                Diffi d = new Diffi(p, Xa, Xb);
+                Console.Text += d.Perform();
+            }
+        }
+
     }
 }

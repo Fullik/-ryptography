@@ -52,11 +52,19 @@
             this.AlfphaButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Console = new System.Windows.Forms.RichTextBox();
+            this.PtextBox = new System.Windows.Forms.TextBox();
+            this.XaTextBox = new System.Windows.Forms.TextBox();
+            this.XbTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.DiffiButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -288,19 +296,28 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.DiffiButton);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.XbTextBox);
+            this.tabPage2.Controls.Add(this.XaTextBox);
+            this.tabPage2.Controls.Add(this.PtextBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(734, 219);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Text = "Второе задание";
             // 
             // Console
             // 
             this.Console.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Console.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Console.ForeColor = System.Drawing.Color.Yellow;
             this.Console.Location = new System.Drawing.Point(0, 241);
             this.Console.Name = "Console";
             this.Console.ReadOnly = true;
@@ -308,6 +325,64 @@
             this.Console.TabIndex = 2;
             this.Console.Text = "";
             this.Console.TextChanged += new System.EventHandler(this.Console_TextChanged);
+            // 
+            // PtextBox
+            // 
+            this.PtextBox.Location = new System.Drawing.Point(72, 37);
+            this.PtextBox.Name = "PtextBox";
+            this.PtextBox.Size = new System.Drawing.Size(274, 20);
+            this.PtextBox.TabIndex = 0;
+            // 
+            // XaTextBox
+            // 
+            this.XaTextBox.Location = new System.Drawing.Point(72, 63);
+            this.XaTextBox.Name = "XaTextBox";
+            this.XaTextBox.Size = new System.Drawing.Size(274, 20);
+            this.XaTextBox.TabIndex = 1;
+            // 
+            // XbTextBox
+            // 
+            this.XbTextBox.Location = new System.Drawing.Point(72, 89);
+            this.XbTextBox.Name = "XbTextBox";
+            this.XbTextBox.Size = new System.Drawing.Size(274, 20);
+            this.XbTextBox.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(52, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(14, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "P";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Xa";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(46, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Xb";
+            // 
+            // DiffiButton
+            // 
+            this.DiffiButton.Location = new System.Drawing.Point(505, 143);
+            this.DiffiButton.Name = "DiffiButton";
+            this.DiffiButton.Size = new System.Drawing.Size(220, 70);
+            this.DiffiButton.TabIndex = 6;
+            this.DiffiButton.Text = "Подсчитать";
+            this.DiffiButton.UseVisualStyleBackColor = true;
+            this.DiffiButton.Click += new System.EventHandler(this.DiffiButton_Click);
             // 
             // Form1
             // 
@@ -327,6 +402,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -357,6 +434,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button DiffiButton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox XbTextBox;
+        private System.Windows.Forms.TextBox XaTextBox;
+        private System.Windows.Forms.TextBox PtextBox;
     }
 }
 
