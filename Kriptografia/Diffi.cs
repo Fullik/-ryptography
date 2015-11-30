@@ -66,7 +66,17 @@ namespace Kriptografia
             Random r = new Random();
             while(f)
             {
-                g = r.Next(30000);
+                g = 3;
+
+                long q = (p - 1)/2;
+                for (long i = g + 1; i < 10000; i++)
+                {
+                    if (isSimple(i) && 1 < q && q<p-1 && mul(i,q,p) != 1)
+                    {
+                        g = i;
+                        break;
+                    }
+                }    
 
                 Ya = mul(g, Xa, p);
                 Yb = mul(g, Xb, p);
@@ -78,7 +88,7 @@ namespace Kriptografia
                     f = false;
             }
 
-            return "g = " + g + " Ya = " + Ya + "Yb = " + Yb + " Zab = Zba = " + Zab + "\n";
+            return "g = " + g + " Ya = " + Ya + " Yb = " + Yb + " Zab = Zba = " + Zab + "\n";
         }
 
 
