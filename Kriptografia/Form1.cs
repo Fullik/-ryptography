@@ -366,5 +366,39 @@ namespace Kriptografia
             }
         }
 
+        private void RSAButton_Click(object sender, EventArgs e)
+        {
+            long m = 0;
+            long Pa = 0;
+            long Qa = 0;
+            long Db = 0;
+            bool f = true;
+            Console.Text += "-------------RSA шифр-------------\n";
+            try
+            {
+                m = Convert.ToInt64(RSAmTextBox.Text);
+                Pa = Convert.ToInt64(RSAPaTextBox.Text);
+                Qa = Convert.ToInt64(RSAQaTextBox.Text);
+                Db = Convert.ToInt64(RSAdbTextBox.Text);
+
+                if (!Diffi.isSimple(Pa) || !Diffi.isSimple(Qa) || !Diffi.isSimple(Db))
+                {
+                    Console.Text += "Pa должно быть простым \n";
+                    f = !f;
+                }
+                
+                if(f)
+                {
+                    RSA rsa = new RSA(m, Pa, Qa, Db);
+                    Console.Text += rsa.perform();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Text += "Введено неверное значение \n";
+                f = !f;
+            }
+        }
+
     }
 }

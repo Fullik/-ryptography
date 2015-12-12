@@ -58,25 +58,35 @@
             this.XbTextBox = new System.Windows.Forms.TextBox();
             this.XaTextBox = new System.Windows.Forms.TextBox();
             this.PtextBox = new System.Windows.Forms.TextBox();
-            this.Console = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.MShamTextBox = new System.Windows.Forms.TextBox();
-            this.NShamTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.ShamButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.NShamTextBox = new System.Windows.Forms.TextBox();
+            this.MShamTextBox = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.MElTextBox = new System.Windows.Forms.TextBox();
-            this.PElTextBox = new System.Windows.Forms.TextBox();
-            this.GElTextBox = new System.Windows.Forms.TextBox();
-            this.CbElTextBox = new System.Windows.Forms.TextBox();
-            this.KElTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.ElButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.KElTextBox = new System.Windows.Forms.TextBox();
+            this.CbElTextBox = new System.Windows.Forms.TextBox();
+            this.GElTextBox = new System.Windows.Forms.TextBox();
+            this.PElTextBox = new System.Windows.Forms.TextBox();
+            this.MElTextBox = new System.Windows.Forms.TextBox();
+            this.Console = new System.Windows.Forms.RichTextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.RSAmTextBox = new System.Windows.Forms.TextBox();
+            this.RSAPaTextBox = new System.Windows.Forms.TextBox();
+            this.RSAQaTextBox = new System.Windows.Forms.TextBox();
+            this.RSAdbTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.RSAButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,6 +95,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -96,6 +107,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -391,21 +403,6 @@
             this.PtextBox.Size = new System.Drawing.Size(274, 20);
             this.PtextBox.TabIndex = 0;
             // 
-            // Console
-            // 
-            this.Console.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Console.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Console.ForeColor = System.Drawing.Color.Yellow;
-            this.Console.Location = new System.Drawing.Point(0, 241);
-            this.Console.Name = "Console";
-            this.Console.ReadOnly = true;
-            this.Console.Size = new System.Drawing.Size(742, 100);
-            this.Console.TabIndex = 2;
-            this.Console.Text = "";
-            this.Console.TextChanged += new System.EventHandler(this.Console_TextChanged);
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -421,28 +418,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Третье задание";
             // 
-            // MShamTextBox
+            // ShamButton
             // 
-            this.MShamTextBox.Location = new System.Drawing.Point(64, 43);
-            this.MShamTextBox.Name = "MShamTextBox";
-            this.MShamTextBox.Size = new System.Drawing.Size(100, 20);
-            this.MShamTextBox.TabIndex = 0;
-            // 
-            // NShamTextBox
-            // 
-            this.NShamTextBox.Location = new System.Drawing.Point(64, 69);
-            this.NShamTextBox.Name = "NShamTextBox";
-            this.NShamTextBox.Size = new System.Drawing.Size(100, 20);
-            this.NShamTextBox.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(43, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "m";
+            this.ShamButton.Location = new System.Drawing.Point(505, 143);
+            this.ShamButton.Name = "ShamButton";
+            this.ShamButton.Size = new System.Drawing.Size(220, 70);
+            this.ShamButton.TabIndex = 4;
+            this.ShamButton.Text = "Подсчитать";
+            this.ShamButton.UseVisualStyleBackColor = true;
+            this.ShamButton.Click += new System.EventHandler(this.ShamButton_Click);
             // 
             // label9
             // 
@@ -453,15 +437,28 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "n";
             // 
-            // ShamButton
+            // label8
             // 
-            this.ShamButton.Location = new System.Drawing.Point(505, 143);
-            this.ShamButton.Name = "ShamButton";
-            this.ShamButton.Size = new System.Drawing.Size(220, 70);
-            this.ShamButton.TabIndex = 4;
-            this.ShamButton.Text = "Подсчитать";
-            this.ShamButton.UseVisualStyleBackColor = true;
-            this.ShamButton.Click += new System.EventHandler(this.ShamButton_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(43, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "m";
+            // 
+            // NShamTextBox
+            // 
+            this.NShamTextBox.Location = new System.Drawing.Point(64, 69);
+            this.NShamTextBox.Name = "NShamTextBox";
+            this.NShamTextBox.Size = new System.Drawing.Size(100, 20);
+            this.NShamTextBox.TabIndex = 1;
+            // 
+            // MShamTextBox
+            // 
+            this.MShamTextBox.Location = new System.Drawing.Point(64, 43);
+            this.MShamTextBox.Name = "MShamTextBox";
+            this.MShamTextBox.Size = new System.Drawing.Size(100, 20);
+            this.MShamTextBox.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -484,76 +481,15 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Четвертое задание";
             // 
-            // MElTextBox
+            // ElButton
             // 
-            this.MElTextBox.Location = new System.Drawing.Point(81, 17);
-            this.MElTextBox.Name = "MElTextBox";
-            this.MElTextBox.Size = new System.Drawing.Size(100, 20);
-            this.MElTextBox.TabIndex = 0;
-            // 
-            // PElTextBox
-            // 
-            this.PElTextBox.Location = new System.Drawing.Point(81, 43);
-            this.PElTextBox.Name = "PElTextBox";
-            this.PElTextBox.Size = new System.Drawing.Size(100, 20);
-            this.PElTextBox.TabIndex = 1;
-            // 
-            // GElTextBox
-            // 
-            this.GElTextBox.Location = new System.Drawing.Point(81, 69);
-            this.GElTextBox.Name = "GElTextBox";
-            this.GElTextBox.Size = new System.Drawing.Size(100, 20);
-            this.GElTextBox.TabIndex = 2;
-            // 
-            // CbElTextBox
-            // 
-            this.CbElTextBox.Location = new System.Drawing.Point(81, 95);
-            this.CbElTextBox.Name = "CbElTextBox";
-            this.CbElTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CbElTextBox.TabIndex = 3;
-            // 
-            // KElTextBox
-            // 
-            this.KElTextBox.Location = new System.Drawing.Point(81, 122);
-            this.KElTextBox.Name = "KElTextBox";
-            this.KElTextBox.Size = new System.Drawing.Size(100, 20);
-            this.KElTextBox.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(34, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(15, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "m";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(34, 46);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "p";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(34, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "g";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(34, 98);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(19, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "cb";
+            this.ElButton.Location = new System.Drawing.Point(505, 143);
+            this.ElButton.Name = "ElButton";
+            this.ElButton.Size = new System.Drawing.Size(220, 70);
+            this.ElButton.TabIndex = 10;
+            this.ElButton.Text = "Подсчитать";
+            this.ElButton.UseVisualStyleBackColor = true;
+            this.ElButton.Click += new System.EventHandler(this.ElButton_Click);
             // 
             // label14
             // 
@@ -564,15 +500,184 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "k";
             // 
-            // ElButton
+            // label13
             // 
-            this.ElButton.Location = new System.Drawing.Point(505, 143);
-            this.ElButton.Name = "ElButton";
-            this.ElButton.Size = new System.Drawing.Size(220, 70);
-            this.ElButton.TabIndex = 10;
-            this.ElButton.Text = "Подсчитать";
-            this.ElButton.UseVisualStyleBackColor = true;
-            this.ElButton.Click += new System.EventHandler(this.ElButton_Click);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(34, 98);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(19, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "cb";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(34, 72);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "g";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(34, 46);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "p";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(34, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(15, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "m";
+            // 
+            // KElTextBox
+            // 
+            this.KElTextBox.Location = new System.Drawing.Point(81, 122);
+            this.KElTextBox.Name = "KElTextBox";
+            this.KElTextBox.Size = new System.Drawing.Size(100, 20);
+            this.KElTextBox.TabIndex = 4;
+            // 
+            // CbElTextBox
+            // 
+            this.CbElTextBox.Location = new System.Drawing.Point(81, 95);
+            this.CbElTextBox.Name = "CbElTextBox";
+            this.CbElTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CbElTextBox.TabIndex = 3;
+            // 
+            // GElTextBox
+            // 
+            this.GElTextBox.Location = new System.Drawing.Point(81, 69);
+            this.GElTextBox.Name = "GElTextBox";
+            this.GElTextBox.Size = new System.Drawing.Size(100, 20);
+            this.GElTextBox.TabIndex = 2;
+            // 
+            // PElTextBox
+            // 
+            this.PElTextBox.Location = new System.Drawing.Point(81, 43);
+            this.PElTextBox.Name = "PElTextBox";
+            this.PElTextBox.Size = new System.Drawing.Size(100, 20);
+            this.PElTextBox.TabIndex = 1;
+            // 
+            // MElTextBox
+            // 
+            this.MElTextBox.Location = new System.Drawing.Point(81, 17);
+            this.MElTextBox.Name = "MElTextBox";
+            this.MElTextBox.Size = new System.Drawing.Size(100, 20);
+            this.MElTextBox.TabIndex = 0;
+            // 
+            // Console
+            // 
+            this.Console.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Console.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Console.ForeColor = System.Drawing.Color.Yellow;
+            this.Console.Location = new System.Drawing.Point(0, 241);
+            this.Console.Name = "Console";
+            this.Console.ReadOnly = true;
+            this.Console.Size = new System.Drawing.Size(742, 100);
+            this.Console.TabIndex = 2;
+            this.Console.Text = "";
+            this.Console.TextChanged += new System.EventHandler(this.Console_TextChanged);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage5.Controls.Add(this.RSAButton);
+            this.tabPage5.Controls.Add(this.label18);
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.RSAdbTextBox);
+            this.tabPage5.Controls.Add(this.RSAQaTextBox);
+            this.tabPage5.Controls.Add(this.RSAPaTextBox);
+            this.tabPage5.Controls.Add(this.RSAmTextBox);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(734, 219);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Пятое задание";
+            // 
+            // RSAmTextBox
+            // 
+            this.RSAmTextBox.Location = new System.Drawing.Point(70, 18);
+            this.RSAmTextBox.Name = "RSAmTextBox";
+            this.RSAmTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAmTextBox.TabIndex = 0;
+            // 
+            // RSAPaTextBox
+            // 
+            this.RSAPaTextBox.Location = new System.Drawing.Point(70, 53);
+            this.RSAPaTextBox.Name = "RSAPaTextBox";
+            this.RSAPaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAPaTextBox.TabIndex = 1;
+            // 
+            // RSAQaTextBox
+            // 
+            this.RSAQaTextBox.Location = new System.Drawing.Point(70, 89);
+            this.RSAQaTextBox.Name = "RSAQaTextBox";
+            this.RSAQaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAQaTextBox.TabIndex = 2;
+            // 
+            // RSAdbTextBox
+            // 
+            this.RSAdbTextBox.Location = new System.Drawing.Point(70, 129);
+            this.RSAdbTextBox.Name = "RSAdbTextBox";
+            this.RSAdbTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAdbTextBox.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(23, 21);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "m";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(23, 56);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Pa";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(23, 92);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(19, 13);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "qa";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(23, 132);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 13);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "db";
+            // 
+            // RSAButton
+            // 
+            this.RSAButton.Location = new System.Drawing.Point(511, 146);
+            this.RSAButton.Name = "RSAButton";
+            this.RSAButton.Size = new System.Drawing.Size(220, 70);
+            this.RSAButton.TabIndex = 8;
+            this.RSAButton.Text = "Подсчитать";
+            this.RSAButton.UseVisualStyleBackColor = true;
+            this.RSAButton.Click += new System.EventHandler(this.RSAButton_Click);
             // 
             // Form1
             // 
@@ -598,6 +703,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -653,6 +760,16 @@
         private System.Windows.Forms.TextBox GElTextBox;
         private System.Windows.Forms.TextBox PElTextBox;
         private System.Windows.Forms.TextBox MElTextBox;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button RSAButton;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox RSAdbTextBox;
+        private System.Windows.Forms.TextBox RSAQaTextBox;
+        private System.Windows.Forms.TextBox RSAPaTextBox;
+        private System.Windows.Forms.TextBox RSAmTextBox;
     }
 }
 

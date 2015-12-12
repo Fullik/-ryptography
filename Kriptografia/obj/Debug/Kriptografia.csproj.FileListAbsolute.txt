@@ -7,3 +7,12 @@ c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptog
 c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.csproj.GenerateResource.Cache
 c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.exe
 c:\users\азарян\documents\visual studio 2013\Projects\Kriptografia\Kriptografia\obj\Debug\Kriptografia.pdb
+C:\Users\Азарян\git\Cryptography\Kriptografia\bin\Debug\Kriptografia.exe.config
+C:\Users\Азарян\git\Cryptography\Kriptografia\obj\Debug\Kriptografia.exe
+C:\Users\Азарян\git\Cryptography\Kriptografia\obj\Debug\Kriptografia.pdb
+C:\Users\Азарян\git\Cryptography\Kriptografia\bin\Debug\Kriptografia.exe
+C:\Users\Азарян\git\Cryptography\Kriptografia\bin\Debug\Kriptografia.pdb
+C:\Users\Азарян\git\Cryptography\Kriptografia\obj\Debug\Kriptografia.csprojResolveAssemblyReference.cache
+C:\Users\Азарян\git\Cryptography\Kriptografia\obj\Debug\Kriptografia.Form1.resources
+C:\Users\Азарян\git\Cryptography\Kriptografia\obj\Debug\Kriptografia.Properties.Resources.resources
+C:\Users\Азарян\git\Cryptography\Kriptografia\obj\Debug\Kriptografia.csproj.GenerateResource.Cache
