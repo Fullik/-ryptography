@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 
 namespace Kriptografia
 {
@@ -30,30 +29,44 @@ namespace Kriptografia
 
         private long fx(int x)
         {
-            return x*x*x+a*x+b;
+            return mod(x*x*x+a*x+b,p);
         }
 
-        private long lasum(Point x, Point x1)
+        public Point systemDouble(Point G)
         {
-            if (x1.X - x.X == 0)
-            {
-                return 0;
-            }
-            if ((x.Y - x1.Y) % (x1.X - x.X) != 0)
-            {
-               return (x.Y - x1.Y) * mul((x1.X - x.X), p - 1 - 1, p);
-            }
-            return ((x.Y - x1.Y) / (x1.X - x.X)) % p;
+            // double l = (3 * Math.Pow(G.X, 2) + a)/2*G.Y;
+
+            long part1 = (long)mod((3 * G.X*G.X + a), p);
+
+            long part2 = mul((long)(2 * G.Y), p -1 - 1, p);
+
+            long l = mod(part1 * part2, p);
+
+            long x = mod(l*l - 2 * G.X, p);
+            long y = mod((l * (G.X - x) - G.Y), p);
+
+            return (new Point((int)x, (int)y));
         }
 
-        private long ladouble (Point x)
+        public Point systemSum(Point a, Point b)
         {
-            if ((3 * x.X * x.X + a) % (2 * x.Y) != 0)
-            {
-                long temp = mul(2 * x.Y, p - 1 - 1, p);
-                return (3 * x.X * x.X + a) * temp;
-            }
-            return ((3 * x.X * x.X + a)/2*x.Y) % p;
+            Point new_point = systemDouble(a);
+
+            long part1 = (long)mod((b.Y - new_point.Y), p);
+
+            long part2 = mul((long)(b.X - new_point.X), p - 1 - 1, p);
+
+            long l = mod(part1 * part2, p);
+
+            long x = mod(l*l - new_point.X - b.X, p);
+            long y = mod((l * (new_point.X - x) - new_point.Y), p);
+
+            return new Point((int)x, (int)y);
+        }
+
+        public long mod(long x, long m)
+        {
+            return (x % m + m) % m;
         }
 
         public long mul(long a, long k, long n)
@@ -76,55 +89,6 @@ namespace Kriptografia
             return b;
         }
 
-        private Point systemDouble(Point x)
-        {
-            long temp = ladouble(x);
-            long x3 = (temp*temp - 2*x.X);
-            if (x3 < 0)
-            {
-                x3 %= p;
-                x3 += p;
-            }
-            else
-                x3 %= p;
-            long y3 = temp * (x.X - x3) - x.Y;
-            if (y3 < 0)
-            {
-                y3 %= p;
-                y3 += p;
-            }
-            else y3 %= p;
-
-            Point j = new Point((int)x3, (int)y3);
-
-            return j;
-        }
-
-        private Point systemSum(Point x, Point x1)
-        {
-            long temp = lasum(x, x1);
-            long x3 = (temp * temp - x.X - x1.X);
-            if (x3 < 0)
-            {
-                x3 %= p;
-                x3 += p;
-            }
-            else
-                x3 %= p;
-
-            long y3 = temp * (x.X - x3) - x.Y;
-            if (y3 < 0)
-            {
-                y3 %= p;
-                y3 += p;
-            }
-            else y3 %= p;
-
-            Point j = new Point((int)x3, (int)y3);
-
-            return j;
-        }
-
         public string perform()
         {
             int q = 0;
@@ -139,6 +103,8 @@ namespace Kriptografia
                     } else q += 2;
                 }
             }
+
+            q++;
 
             if (!Diffi.isSimple(q))
             {
@@ -171,22 +137,39 @@ namespace Kriptografia
 
             s = tempCb + s;
 
-            Point Q = G;
-            Point Q1 = G;
+            Point K = null;
 
             for (int i = 1; i < s.Length; i++)
             {
-                
+
+                if (s[i] == '1')
+                {
+                    if (K == null)
+                    {
+                        K = systemSum(G, G);
+                    }
+                    else
+                    {
+                        K = systemSum(K, G);
+                    }
+
+                }
+
                 if (s[i] == '0')
                 {
-                    Q = systemDouble(Q);
-                }
-                else
-                    if (s[i] == '1')
+
+                    if (K == null)
                     {
-                        Q = systemSum(systemDouble(Q), Q1);
+                        K = systemDouble(G);
                     }
+                    else
+                    {
+                        K = systemDouble(K);
+                    }
+                }
             }
+
+            Point Db = K;
 
             s = "";
             while (k != 1 && k != 0)
@@ -197,41 +180,71 @@ namespace Kriptografia
 
             s = k + s;
 
-            Point R = G;
-            Q1 = G;
+            Point R = null;
 
             for (int i = 1; i < s.Length; i++)
             {
 
+                if (s[i] == '1')
+                {
+                    if (R == null)
+                    {
+                        R = systemSum(G, G);
+                    }
+                    else
+                    {
+                        R = systemSum(R, G);
+                    }
+
+                }
+
                 if (s[i] == '0')
                 {
-                    R = systemDouble(R);
-                }
-                else
-                    if (s[i] == '1')
+
+                    if (R == null)
                     {
-                        R = systemSum(systemDouble(R), Q1);
+                        R = systemDouble(G);
                     }
+                    else
+                    {
+                        R = systemDouble(R);
+                    }
+                }
             }
 
-            Point P = Q;
-            Q1 = G;
+            Point P = null;
 
             for (int i = 1; i < s.Length; i++)
             {
 
+                if (s[i] == '1')
+                {
+                    if (P == null)
+                    {
+                        P = systemSum(Db, Db);
+                    }
+                    else
+                    {
+                        P = systemSum(P, Db);
+                    }
+
+                }
+
                 if (s[i] == '0')
                 {
-                    P = systemDouble(P);
-                }
-                else
-                    if (s[i] == '1')
+
+                    if (P == null)
                     {
-                        P = systemSum(systemDouble(P), Q1);
+                        P = systemDouble(Db);
                     }
+                    else
+                    {
+                        P = systemDouble(P);
+                    }
+                }
             }
 
-            long e = m * P.X % p;
+            long e = mod(m * P.X, p);
 
 
             s = "";
@@ -242,26 +255,58 @@ namespace Kriptografia
             }
 
             s = Cb + s;
-            Q1 = R;
+            Point Q = null;
             for (int i = 1; i < s.Length; i++)
             {
 
+                if (s[i] == '1')
+                {
+                    if (Q == null)
+                    {
+                        Q = systemSum(R, R);
+                    }
+                    else
+                    {
+                        Q = systemSum(Q, R);
+                    }
+
+                }
+
                 if (s[i] == '0')
                 {
-                    R = systemDouble(R);
-                }
-                else
-                    if (s[i] == '1')
+
+                    if (Q == null)
                     {
-                        R = systemSum(systemDouble(R), Q1);
+                        Q = systemDouble(R);
                     }
+                    else
+                    {
+                        Q = systemDouble(R);
+                    }
+                }
             }
 
-            long m1 = e * mul(R.X, 9, p);
+            long m1 = mod(e * mul(Q.X, p - 1 - 1, p), p);
 
 
 
-            return "";
+            return "m = " + m + "\n R = " + "(" + R.X + "," + R.Y + ") " + "e = " + e + " m' = " + m1 + "\n ";
+        }
+    }
+
+    public class Point
+    {
+        public long X { get; set; }
+        public long Y { get; set; }
+        public Point(long x, long y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public Point()
+        {
+
         }
     }
 }
