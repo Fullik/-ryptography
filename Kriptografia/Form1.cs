@@ -400,5 +400,41 @@ namespace Kriptografia
             }
         }
 
+        private void ElGamalELButton_Click(object sender, EventArgs e)
+        {
+            long m = 0;
+            long k = 0;
+            long p = 0;
+            long a = 0;
+            long b = 0;
+            long x = 0;
+            long y = 0;
+            long Cb = 0;
+            bool f = true;
+
+            try
+            {
+                Cb = Convert.ToInt64(ElGamalELCbTextBox.Text);
+                m = Convert.ToInt64(ElGamalELMTextBox.Text);
+                k = Convert.ToInt64(ElGamalELKTextBox.Text);
+                p = Convert.ToInt64(ElGamalELPTextBox.Text);
+                a = Convert.ToInt64(ElGamalELATextBox.Text);
+                b = Convert.ToInt64(ElGamalELBTextBox.Text);
+                x = Convert.ToInt64(ElGamalELXTextBox.Text);
+                y = Convert.ToInt64(ElGamalELYTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                Console.Text += "Введено неверное значение \n";
+                f = !f;
+            }
+
+            if(f)
+            {
+                ElGamalEl el = new ElGamalEl(p, a, b, x, y,Cb,m,k);
+                Console.Text += el.perform();
+            }
+        }
+
     }
 }

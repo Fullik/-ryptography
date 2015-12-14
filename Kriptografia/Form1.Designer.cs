@@ -76,17 +76,35 @@
             this.GElTextBox = new System.Windows.Forms.TextBox();
             this.PElTextBox = new System.Windows.Forms.TextBox();
             this.MElTextBox = new System.Windows.Forms.TextBox();
-            this.Console = new System.Windows.Forms.RichTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.RSAmTextBox = new System.Windows.Forms.TextBox();
-            this.RSAPaTextBox = new System.Windows.Forms.TextBox();
-            this.RSAQaTextBox = new System.Windows.Forms.TextBox();
-            this.RSAdbTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.RSAButton = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.RSAdbTextBox = new System.Windows.Forms.TextBox();
+            this.RSAQaTextBox = new System.Windows.Forms.TextBox();
+            this.RSAPaTextBox = new System.Windows.Forms.TextBox();
+            this.RSAmTextBox = new System.Windows.Forms.TextBox();
+            this.Console = new System.Windows.Forms.RichTextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.ElGamalELPTextBox = new System.Windows.Forms.TextBox();
+            this.ElGamalELATextBox = new System.Windows.Forms.TextBox();
+            this.ElGamalELBTextBox = new System.Windows.Forms.TextBox();
+            this.ElGamalELXTextBox = new System.Windows.Forms.TextBox();
+            this.ElGamalELYTextBox = new System.Windows.Forms.TextBox();
+            this.ElGamalELButton = new System.Windows.Forms.Button();
+            this.ElGamalELMTextBox = new System.Windows.Forms.TextBox();
+            this.ElGamalELKTextBox = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.ElGamalELCbTextBox = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,6 +114,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -108,6 +127,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -571,21 +591,6 @@
             this.MElTextBox.Size = new System.Drawing.Size(100, 20);
             this.MElTextBox.TabIndex = 0;
             // 
-            // Console
-            // 
-            this.Console.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Console.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Console.ForeColor = System.Drawing.Color.Yellow;
-            this.Console.Location = new System.Drawing.Point(0, 241);
-            this.Console.Name = "Console";
-            this.Console.ReadOnly = true;
-            this.Console.Size = new System.Drawing.Size(742, 100);
-            this.Console.TabIndex = 2;
-            this.Console.Text = "";
-            this.Console.TextChanged += new System.EventHandler(this.Console_TextChanged);
-            // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -605,60 +610,15 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Пятое задание";
             // 
-            // RSAmTextBox
+            // RSAButton
             // 
-            this.RSAmTextBox.Location = new System.Drawing.Point(70, 18);
-            this.RSAmTextBox.Name = "RSAmTextBox";
-            this.RSAmTextBox.Size = new System.Drawing.Size(100, 20);
-            this.RSAmTextBox.TabIndex = 0;
-            // 
-            // RSAPaTextBox
-            // 
-            this.RSAPaTextBox.Location = new System.Drawing.Point(70, 53);
-            this.RSAPaTextBox.Name = "RSAPaTextBox";
-            this.RSAPaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.RSAPaTextBox.TabIndex = 1;
-            // 
-            // RSAQaTextBox
-            // 
-            this.RSAQaTextBox.Location = new System.Drawing.Point(70, 89);
-            this.RSAQaTextBox.Name = "RSAQaTextBox";
-            this.RSAQaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.RSAQaTextBox.TabIndex = 2;
-            // 
-            // RSAdbTextBox
-            // 
-            this.RSAdbTextBox.Location = new System.Drawing.Point(70, 129);
-            this.RSAdbTextBox.Name = "RSAdbTextBox";
-            this.RSAdbTextBox.Size = new System.Drawing.Size(100, 20);
-            this.RSAdbTextBox.TabIndex = 3;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(23, 21);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 13);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "m";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(23, 56);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(20, 13);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Pa";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(23, 92);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(19, 13);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "qa";
+            this.RSAButton.Location = new System.Drawing.Point(511, 146);
+            this.RSAButton.Name = "RSAButton";
+            this.RSAButton.Size = new System.Drawing.Size(220, 70);
+            this.RSAButton.TabIndex = 8;
+            this.RSAButton.Text = "Подсчитать";
+            this.RSAButton.UseVisualStyleBackColor = true;
+            this.RSAButton.Click += new System.EventHandler(this.RSAButton_Click);
             // 
             // label18
             // 
@@ -669,15 +629,240 @@
             this.label18.TabIndex = 7;
             this.label18.Text = "db";
             // 
-            // RSAButton
+            // label17
             // 
-            this.RSAButton.Location = new System.Drawing.Point(511, 146);
-            this.RSAButton.Name = "RSAButton";
-            this.RSAButton.Size = new System.Drawing.Size(220, 70);
-            this.RSAButton.TabIndex = 8;
-            this.RSAButton.Text = "Подсчитать";
-            this.RSAButton.UseVisualStyleBackColor = true;
-            this.RSAButton.Click += new System.EventHandler(this.RSAButton_Click);
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(23, 92);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(19, 13);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "qa";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(23, 56);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Pa";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(23, 21);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "m";
+            // 
+            // RSAdbTextBox
+            // 
+            this.RSAdbTextBox.Location = new System.Drawing.Point(70, 129);
+            this.RSAdbTextBox.Name = "RSAdbTextBox";
+            this.RSAdbTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAdbTextBox.TabIndex = 3;
+            // 
+            // RSAQaTextBox
+            // 
+            this.RSAQaTextBox.Location = new System.Drawing.Point(70, 89);
+            this.RSAQaTextBox.Name = "RSAQaTextBox";
+            this.RSAQaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAQaTextBox.TabIndex = 2;
+            // 
+            // RSAPaTextBox
+            // 
+            this.RSAPaTextBox.Location = new System.Drawing.Point(70, 53);
+            this.RSAPaTextBox.Name = "RSAPaTextBox";
+            this.RSAPaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAPaTextBox.TabIndex = 1;
+            // 
+            // RSAmTextBox
+            // 
+            this.RSAmTextBox.Location = new System.Drawing.Point(70, 18);
+            this.RSAmTextBox.Name = "RSAmTextBox";
+            this.RSAmTextBox.Size = new System.Drawing.Size(100, 20);
+            this.RSAmTextBox.TabIndex = 0;
+            // 
+            // Console
+            // 
+            this.Console.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Console.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Console.ForeColor = System.Drawing.Color.Yellow;
+            this.Console.Location = new System.Drawing.Point(0, 241);
+            this.Console.Name = "Console";
+            this.Console.ReadOnly = true;
+            this.Console.Size = new System.Drawing.Size(742, 100);
+            this.Console.TabIndex = 2;
+            this.Console.Text = "";
+            this.Console.TextChanged += new System.EventHandler(this.Console_TextChanged);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage6.Controls.Add(this.label26);
+            this.tabPage6.Controls.Add(this.ElGamalELCbTextBox);
+            this.tabPage6.Controls.Add(this.label25);
+            this.tabPage6.Controls.Add(this.label24);
+            this.tabPage6.Controls.Add(this.ElGamalELKTextBox);
+            this.tabPage6.Controls.Add(this.ElGamalELMTextBox);
+            this.tabPage6.Controls.Add(this.ElGamalELButton);
+            this.tabPage6.Controls.Add(this.ElGamalELYTextBox);
+            this.tabPage6.Controls.Add(this.ElGamalELXTextBox);
+            this.tabPage6.Controls.Add(this.ElGamalELBTextBox);
+            this.tabPage6.Controls.Add(this.ElGamalELATextBox);
+            this.tabPage6.Controls.Add(this.ElGamalELPTextBox);
+            this.tabPage6.Controls.Add(this.label23);
+            this.tabPage6.Controls.Add(this.label22);
+            this.tabPage6.Controls.Add(this.label21);
+            this.tabPage6.Controls.Add(this.label20);
+            this.tabPage6.Controls.Add(this.label19);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(734, 219);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Шестое задание";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(22, 28);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(14, 13);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "P";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(22, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(13, 13);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "a";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(23, 79);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(13, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "b";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(24, 105);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(12, 13);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "x";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(84, 105);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(12, 13);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "y";
+            // 
+            // ElGamalELPTextBox
+            // 
+            this.ElGamalELPTextBox.Location = new System.Drawing.Point(42, 25);
+            this.ElGamalELPTextBox.Name = "ElGamalELPTextBox";
+            this.ElGamalELPTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ElGamalELPTextBox.TabIndex = 5;
+            // 
+            // ElGamalELATextBox
+            // 
+            this.ElGamalELATextBox.Location = new System.Drawing.Point(42, 50);
+            this.ElGamalELATextBox.Name = "ElGamalELATextBox";
+            this.ElGamalELATextBox.Size = new System.Drawing.Size(100, 20);
+            this.ElGamalELATextBox.TabIndex = 6;
+            // 
+            // ElGamalELBTextBox
+            // 
+            this.ElGamalELBTextBox.Location = new System.Drawing.Point(42, 76);
+            this.ElGamalELBTextBox.Name = "ElGamalELBTextBox";
+            this.ElGamalELBTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ElGamalELBTextBox.TabIndex = 7;
+            // 
+            // ElGamalELXTextBox
+            // 
+            this.ElGamalELXTextBox.Location = new System.Drawing.Point(42, 102);
+            this.ElGamalELXTextBox.Name = "ElGamalELXTextBox";
+            this.ElGamalELXTextBox.Size = new System.Drawing.Size(36, 20);
+            this.ElGamalELXTextBox.TabIndex = 8;
+            // 
+            // ElGamalELYTextBox
+            // 
+            this.ElGamalELYTextBox.Location = new System.Drawing.Point(102, 102);
+            this.ElGamalELYTextBox.Name = "ElGamalELYTextBox";
+            this.ElGamalELYTextBox.Size = new System.Drawing.Size(40, 20);
+            this.ElGamalELYTextBox.TabIndex = 9;
+            // 
+            // ElGamalELButton
+            // 
+            this.ElGamalELButton.Location = new System.Drawing.Point(508, 143);
+            this.ElGamalELButton.Name = "ElGamalELButton";
+            this.ElGamalELButton.Size = new System.Drawing.Size(220, 70);
+            this.ElGamalELButton.TabIndex = 10;
+            this.ElGamalELButton.Text = "Подсчитать";
+            this.ElGamalELButton.UseVisualStyleBackColor = true;
+            this.ElGamalELButton.Click += new System.EventHandler(this.ElGamalELButton_Click);
+            // 
+            // ElGamalELMTextBox
+            // 
+            this.ElGamalELMTextBox.Location = new System.Drawing.Point(42, 128);
+            this.ElGamalELMTextBox.Name = "ElGamalELMTextBox";
+            this.ElGamalELMTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ElGamalELMTextBox.TabIndex = 11;
+            // 
+            // ElGamalELKTextBox
+            // 
+            this.ElGamalELKTextBox.Location = new System.Drawing.Point(42, 154);
+            this.ElGamalELKTextBox.Name = "ElGamalELKTextBox";
+            this.ElGamalELKTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ElGamalELKTextBox.TabIndex = 12;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(24, 131);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(15, 13);
+            this.label24.TabIndex = 13;
+            this.label24.Text = "m";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(24, 157);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(13, 13);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "k";
+            // 
+            // ElGamalELCbTextBox
+            // 
+            this.ElGamalELCbTextBox.Location = new System.Drawing.Point(42, 180);
+            this.ElGamalELCbTextBox.Name = "ElGamalELCbTextBox";
+            this.ElGamalELCbTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ElGamalELCbTextBox.TabIndex = 15;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 183);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(20, 13);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "Cb";
             // 
             // Form1
             // 
@@ -705,6 +890,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -770,6 +957,24 @@
         private System.Windows.Forms.TextBox RSAQaTextBox;
         private System.Windows.Forms.TextBox RSAPaTextBox;
         private System.Windows.Forms.TextBox RSAmTextBox;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button ElGamalELButton;
+        private System.Windows.Forms.TextBox ElGamalELYTextBox;
+        private System.Windows.Forms.TextBox ElGamalELXTextBox;
+        private System.Windows.Forms.TextBox ElGamalELBTextBox;
+        private System.Windows.Forms.TextBox ElGamalELATextBox;
+        private System.Windows.Forms.TextBox ElGamalELPTextBox;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox ElGamalELKTextBox;
+        private System.Windows.Forms.TextBox ElGamalELMTextBox;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox ElGamalELCbTextBox;
     }
 }
 
